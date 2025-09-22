@@ -1,0 +1,24 @@
+app:
+  name: "John Doe"
+  regNo: "REG12347"          # <-- change to your reg number
+  email: "john@example.com"
+
+  generateWebhookUrl: "https://bfhldevapigw.healthrx.co.in/hiring/generateWebhook/JAVA"
+  submitWebhookUrl: "https://bfhldevapigw.healthrx.co.in/hiring/testWebhook/JAVA"
+
+  # Put the final SQL queries here (the final SQL string to send back)
+  finalQueryOdd: "/* PUT YOUR FINAL SQL QUERY FOR ODD regNo HERE */"
+  finalQueryEven: "/* PUT YOUR FINAL SQL QUERY FOR EVEN regNo HERE */"
+
+spring:
+  datasource:
+    url: jdbc:postgresql://postgres:5432/webhookdb
+    username: webhook
+    password: webhook
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+
+server:
+  port: 8080
